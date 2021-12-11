@@ -47,7 +47,6 @@ class MySortingTable {
         elemsToClick.forEach(etc => {
             etc.click();
         });
-
     }
     clickEvent(thClicked, index) {
         // var index = $(thClicked).index();
