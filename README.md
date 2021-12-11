@@ -6,5 +6,5 @@ Add the .toSort class to the th to be sorted. <br>
 Add the .defaultSort class to the th to be sorted immediately upon loading the table.
 
 
-If you give me a coffee, I'll gladly go and drink it :-D!:
+If you give me a coffee, I'll gladly go and drink it :-D!: <br>
 https://www.paypal.com/donate/?hosted_button_id=5EKCKBZF7Q7C4
