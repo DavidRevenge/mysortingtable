@@ -49,7 +49,6 @@ class MySortingTable {
         });
     }
     clickEvent(thClicked, index) {
-        // var index = $(thClicked).index();
         var tbody = document.querySelector(this.selector + ' tbody');
         var tdToSort = document.querySelectorAll(this.selector + ' tbody > tr > td:nth-child(' + (index + 1) + ')');
         var values = [];
@@ -80,7 +79,6 @@ class MySortingTable {
         this.appendDefaultSortIcon(elems);
     }
     appendDefaultSortIcon(elems) {
-        // this.appendHtml(elems, '<i style="margin-left: 1rem;" class="fa fa-sort"></i>');
         this.appendHtml(elems, this.getDefaultSortSvg());
     }
     sortAsc(values, th) {
@@ -107,7 +105,6 @@ class MySortingTable {
             if (sortValues.a < sortValues.b) return 1;
             return 0;
         });
-       // this.changeClass(th.querySelector('.fa-sort-asc, .fa-sort'), 'fa-sort-asc fa-sort', 'fa-sort-desc');
         this.replaceSortIcon(th, this.getDescSortSvg());
         this.changeClass(this.selector, 'asc', 'desc');
     }
@@ -170,7 +167,6 @@ class MySortingTable {
         if (!!elem && !!elem.classList) elem.classList.add(...className);
     }
     replaceSortIcon(th, html) {
-        // this.changeClass(th.querySelector('.fa-sort-desc, .fa-sort'), 'fa-sort-desc fa-sort', 'fa-sort-asc');
         th.querySelector('.sortIcon').remove();
         th.innerHTML += html; //this.getDescSortSvg();
     }
