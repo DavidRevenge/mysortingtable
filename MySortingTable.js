@@ -16,7 +16,7 @@ class MySortingTable {
 
     defaultSortIconSize = {
         w: 13,
-        h: 8
+        h: 13
     };
     descSortIconSize = {
         w: 12.2,
