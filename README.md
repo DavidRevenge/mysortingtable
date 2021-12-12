@@ -3,7 +3,8 @@ Simple class to perform the table sort: was created specifically to compensate f
 The other usefulness is that it's a single file. It does not depend on any other file (css, javascript, etc.)
 
 # To initialize the table
-## 1. Add this before the closing body tag (with the path of file)
+## 1. Download
+### Download the MySortingTable.js file and add the following code before the closing body tag (with the path of file)
 ```html
 <script src="MySortingTable.js"></script>
 </body>
