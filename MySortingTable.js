@@ -63,7 +63,6 @@ class MySortingTable {
             this.removeClass(this.selector.querySelectorAll('th'), 'asc desc');
             this.iconInit();
             if (!this.hasClass(this.selector, 'initialized')) {
-
                 var that = this;
                 var elems = this.selector.querySelectorAll('th.toSort');
                 elems.forEach((elem, index) => { elem.addEventListener('click', function () { that.clickEvent(this, index); }); });
