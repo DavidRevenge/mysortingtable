@@ -5,7 +5,7 @@
  *  Add the .toSort class to the th to be sorted.
  *  Add the .defaultSort class to the th to be sorted immediately upon loading the table.
  * @author Davide Buccella
- * @version 2.4.0
+ * @version 2.4.1
  * @dependency none
  * @license MIT
  */
@@ -67,17 +67,12 @@
                 var that = this;
                 var elems = this.selector.querySelectorAll('th.toSort');
                 elems.forEach((elem, index) => {
-                    elem.addEventListener('click', function () {
-                        that.clickEvent(this, index);
-                    });
+                    elem.addEventListener('click', function () { that.clickEvent(this, index); });
                 });
                 this.addClass(this.selector, 'initialized');
             }
             var elemsToClick = this.selector.querySelectorAll('th.toSort.defaultSort');
-            elemsToClick.forEach(etc => {
-                etc.click();
-            });
-
+            elemsToClick.forEach(etc => { etc.click();});
         });
     }
     getRandomId() {
@@ -109,9 +104,7 @@
     iconInit() {
         this.removeSortIcons();
         var elems = this.selector.querySelectorAll('th.toSort');
-        elems.forEach(elem => {
-            elem.style.cursor = 'pointer';
-        });
+        elems.forEach(elem => { elem.style.cursor = 'pointer'; });
         this.appendDefaultSortIcon(elems);
     }
     appendDefaultSortIcon(elems) {
@@ -157,9 +150,7 @@
         if (!!elem) {
             elem = Array.from(elem);
             if (Array.isArray(elem)) {
-                elem.forEach(e => {
-                    e.innerHTML += htmlToAppend;
-                });
+                elem.forEach(e => { e.innerHTML += htmlToAppend; });
             } else {
                 if (!!elem) elem.innerHTML += htmlToAppend;
             }
@@ -174,11 +165,7 @@
     removeDomElem(elem) {
         if (!!elem) {
             if (elem.length === 1) elem.remove();
-            else if (elem.length > 1) {
-                elem.forEach(e => {
-                    e.remove();
-                });
-            }
+            else if (elem.length > 1) elem.forEach(e => { e.remove(); });
         }
     }
     removeClass(selector, className) {
