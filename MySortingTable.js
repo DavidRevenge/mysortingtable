@@ -5,7 +5,7 @@
  *  Add the .toSort class to the th to be sorted.
  *  Add the .defaultSort class to the th to be sorted immediately upon loading the table.
  * @author Davide Buccella
- * @version 2.3.3
+ * @version 2.4.0
  * @dependency none
  * @license MIT
  */
@@ -56,7 +56,8 @@
         }
     }
 
-    constructor(selector) {
+    constructor(selector, isCaseSensitive = false) {
+        this.isCaseSensitive = isCaseSensitive;
         document.querySelectorAll(selector).forEach(sel => {
             this.selector = sel;
             this.removeClass(this.selector.querySelectorAll('th'), 'asc desc');
