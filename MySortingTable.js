@@ -5,7 +5,7 @@
  *  Add the .toSort class to the th to be sorted.
  *  Add the .defaultSort class to the th to be sorted immediately upon loading the table.
  * @author Davide Buccella
- * @version 2.3.2
+ * @version 2.3.3
  * @dependency none
  * @license MIT
  */
@@ -27,7 +27,7 @@
         },
         svg: {
             viewBox: '0 0 36.678 36.678', 
-            style: 'enable-background:new 0 0 36.678 36.678; margin-left: 1rem;',
+            style: 'enable-background:new ' + this.viewBox + '; margin-left: 1rem;',
             g: {
                 path: {
                     d: `M29.696,20.076c0.088,0.16,0.08,0.354-0.021,0.51L19.395,36.449c-0.091,0.139-0.241,0.224-0.407,0.229 c-0.004,0-0.008,0-0.015,0c-0.157,
@@ -46,7 +46,7 @@
         },
         svg: {
             viewBox: '0 0 31.999 32', 
-            style: 'enable-background:new 0 0 31.999 32; margin-left: 0.8rem;',
+            style: 'enable-background:new ' + this.viewBox + '; margin-left: 0.8rem;',
             g: {
                 path: {
                     d: `M31.92,5.021l-14.584,22.5c-0.089,0.138-0.241,0.223-0.406,0.229c-0.004,0-0.009,0-0.014,0 c-0.16,0-0.312-0.076-0.404-0.205L0.096,5.044C-0.015,
