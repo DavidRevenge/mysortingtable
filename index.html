@@ -9,7 +9,56 @@
 </head>
 
 <body>
+    <h1>Normal Table</h1>
     <table id="table_id" class="table_class">
+        <thead>
+            <tr>
+                <th scope="col" class="toSort">Name</th>
+                <th scope="col" class="toSort">Age</th>
+                <th scope="col">Third Column</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Goofy
+                </td>
+                <td>89</td>
+                <td>
+                   Third Column Text
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mickey Mouse
+                </td>
+                <td>93</td>
+                <td>
+                   Third Column Text
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    bickey Mouse
+                </td>
+                <td>15</td>
+                <td>
+                   Third Column Text
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    boofy
+                </td>
+                <td>11</td>
+                <td>
+                   Third Column Text
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Default Sort</h1>
+    <table id="default_table_id" class="table_class">
         <thead>
             <tr>
                 <th scope="col" class="toSort defaultSort">Name</th>
@@ -27,7 +76,6 @@
                    Third Column Text
                 </td>
             </tr>
-
             <tr>
                 <td>
                     Mickey Mouse
@@ -37,12 +85,30 @@
                    Third Column Text
                 </td>
             </tr>
+            <tr>
+                <td>
+                    bickey Mouse
+                </td>
+                <td>15</td>
+                <td>
+                   Third Column Text
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    boofy
+                </td>
+                <td>11</td>
+                <td>
+                   Third Column Text
+                </td>
+            </tr>
         </tbody>
     </table>
 
     <script src="MySortingTable.js"></script>
     <script>
-        var table = new MySortingTable('#table_id');
+        var table = new MySortingTable('.table_class');
     </script>
 </body>
 
