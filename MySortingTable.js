@@ -5,7 +5,7 @@
  *  Add the .toSort class to the th to be sorted.
  *  Add the .defaultSort class to the th to be sorted immediately upon loading the table.
  * @author Davide Buccella
- * @version 2.2.0
+ * @version 2.3.0
  * @dependency none
  * @license MIT
  */
