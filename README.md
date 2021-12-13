@@ -37,7 +37,13 @@ https://davidrevenge.github.io/mysortingtable/
     var table = new MySortingTable('.table_class'); //'.table_class' is the css table selector (multiple tables supported)
 </script>
 ```
-
+# Case sensitive
+If you want case sensitive sorting, add true as second object parameter
+```html
+<script>
+    var table = new MySortingTable('.table_class', true); //isCaseSensitive = true;
+</script>
+```
 # Complete example
 ```html
 <!DOCTYPE html>
