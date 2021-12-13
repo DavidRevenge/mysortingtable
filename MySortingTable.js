@@ -89,7 +89,6 @@
         var tdToSort = tbody.querySelectorAll('tr > td:nth-child(' + (index + 1) + ')');
 
         var values = [];
-        var that = this;
         tdToSort.forEach(function (elem, index) {
             var dataId = 'trToSort_' + index;
             elem.closest('tr').setAttribute('data-mysortingtable', dataId);
