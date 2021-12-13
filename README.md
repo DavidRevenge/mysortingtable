@@ -11,6 +11,11 @@ https://davidrevenge.github.io/mysortingtable/
 <script src="MySortingTable.js"></script>
 </body>
 ```
+### There is also a minified version, if you want.
+```html
+<script src="MySortingTable-min.js"></script>
+</body>
+```
 ## 2. Add classes for sort the table
 ### Add the .toSort class to the th to be sorted.
 ```html
