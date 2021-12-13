@@ -5,7 +5,7 @@
  *  Add the .toSort class to the th to be sorted.
  *  Add the .defaultSort class to the th to be sorted immediately upon loading the table.
  * @author Davide Buccella
- * @version 2.4.3
+ * @version 2.4.4
  * @dependency none
  * @license MIT
  */
@@ -64,30 +64,26 @@ class MySortingTable {
             this.iconInit();
             if (!this.hasClass(this.selector, 'initialized')) {
                 var that = this;
-                var elems = this.selector.querySelectorAll('th.toSort');
-                elems.forEach((elem, index) => { elem.addEventListener('click', function () { that.clickEvent(this, index); }); });
+                this.selector.querySelectorAll('th.toSort').forEach((elem, index) => {
+                    elem.addEventListener('click', function () { that.clickEvent(this, index); });
+                });
                 this.addClass(this.selector, 'initialized');
             }
-            var elemsToClick = this.selector.querySelectorAll('th.toSort.defaultSort');
-            elemsToClick.forEach(etc => { etc.click(); });
+            this.selector.querySelectorAll('th.toSort.defaultSort').forEach(etc => { etc.click(); });
         });
     }
     getRandomId() {
         return Math.floor(Math.random() * 1000);
     }
     clickEvent(thClicked, index) {
-        var table = thClicked.closest('table');
-        var tbody = table.querySelector('tbody');
-        var tdToSort = tbody.querySelectorAll('tr > td:nth-child(' + (index + 1) + ')');
-
+        var tbody = thClicked.closest('table').querySelector('tbody');
         var values = [];
-        tdToSort.forEach(function (elem, index) {
+        tbody.querySelectorAll('tr > td:nth-child(' + (index + 1) + ')').forEach(function (elem, index) {
             var dataId = 'trToSort_' + index;
             elem.closest('tr').setAttribute('data-mysortingtable', dataId);
-            var value = elem.innerText;
             values.push({
                 dataId: dataId,
-                value: value
+                value: elem.innerText
             });
         });
         if (this.hasClass(thClicked, 'desc')) this.sortAsc(values, thClicked);
