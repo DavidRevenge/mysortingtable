@@ -1,24 +1,17 @@
 /**
  * @fileOverview 
- *  Simple class to perform the table sort: was created specifically to compensate for the fact that - sometimes - sorting datatables cannot be applied. 
+ *  A light simple class to perform the table sort: was created specifically to compensate for the fact that - sometimes - sorting datatables cannot be applied. 
  *  The other usefulness is that it's a single file. It does not depends on any other file (css, javascript, etc.)
  *  Add the .toSort class to the th to be sorted.
  *  Add the .defaultSort class to the th to be sorted immediately upon loading the table.
  * @author Davide Buccella
- * @version 2.4.0
+ * @version 2.4.6
  * @dependency none
  * @license MIT
  */
  class MySortingTable {
     selector = '';
-    selectorForId = '';
     isCaseSensitive = false;
-
-    g = {
-        path: {
-            d: ''
-        }
-    }
 
     defaultSortIcon = {
         size: {
@@ -26,7 +19,7 @@
             h: 13
         },
         svg: {
-            viewBox: '0 0 36.678 36.678', 
+            viewBox: '0 0 36.678 36.678',
             style: 'enable-background:new ' + this.viewBox + '; margin-left: 1rem;',
             g: {
                 path: {
@@ -45,7 +38,7 @@
             h: 8
         },
         svg: {
-            viewBox: '0 0 31.999 32', 
+            viewBox: '0 0 31.999 32',
             style: 'enable-background:new ' + this.viewBox + '; margin-left: 0.8rem;',
             g: {
                 path: {
@@ -63,40 +56,27 @@
             this.removeClass(this.selector.querySelectorAll('th'), 'asc desc');
             this.iconInit();
             if (!this.hasClass(this.selector, 'initialized')) {
-
                 var that = this;
-                var elems = this.selector.querySelectorAll('th.toSort');
-                elems.forEach((elem, index) => {
-                    elem.addEventListener('click', function () {
-                        that.clickEvent(this, index);
-                    });
+                this.selector.querySelectorAll('th.toSort').forEach((elem, index) => {
+                    elem.addEventListener('click', function () { that.clickEvent(this, index); });
                 });
                 this.addClass(this.selector, 'initialized');
             }
-            var elemsToClick = this.selector.querySelectorAll('th.toSort.defaultSort');
-            elemsToClick.forEach(etc => {
-                etc.click();
-            });
-
+            this.selector.querySelectorAll('th.toSort.defaultSort').forEach(etc => { etc.click(); });
         });
     }
     getRandomId() {
         return Math.floor(Math.random() * 1000);
     }
     clickEvent(thClicked, index) {
-        var table = thClicked.closest('table');
-        var tbody = table.querySelector('tbody');
-        var tdToSort = tbody.querySelectorAll('tr > td:nth-child(' + (index + 1) + ')');
-
+        var tbody = thClicked.closest('table').querySelector('tbody');
         var values = [];
-        var that = this;
-        tdToSort.forEach(function (elem, index) {
+        tbody.querySelectorAll('tr > td:nth-child(' + (index + 1) + ')').forEach(function (elem, index) {
             var dataId = 'trToSort_' + index;
             elem.closest('tr').setAttribute('data-mysortingtable', dataId);
-            var value = elem.innerText;
             values.push({
                 dataId: dataId,
-                value: value
+                value: elem.innerText
             });
         });
         if (this.hasClass(thClicked, 'desc')) this.sortAsc(values, thClicked);
@@ -110,9 +90,7 @@
     iconInit() {
         this.removeSortIcons();
         var elems = this.selector.querySelectorAll('th.toSort');
-        elems.forEach(elem => {
-            elem.style.cursor = 'pointer';
-        });
+        elems.forEach(elem => { elem.style.cursor = 'pointer'; });
         this.appendDefaultSortIcon(elems);
     }
     appendDefaultSortIcon(elems) {
@@ -158,9 +136,7 @@
         if (!!elem) {
             elem = Array.from(elem);
             if (Array.isArray(elem)) {
-                elem.forEach(e => {
-                    e.innerHTML += htmlToAppend;
-                });
+                elem.forEach(e => { e.innerHTML += htmlToAppend; });
             } else {
                 if (!!elem) elem.innerHTML += htmlToAppend;
             }
@@ -175,11 +151,7 @@
     removeDomElem(elem) {
         if (!!elem) {
             if (elem.length === 1) elem.remove();
-            else if (elem.length > 1) {
-                elem.forEach(e => {
-                    e.remove();
-                });
-            }
+            else if (elem.length > 1) elem.forEach(e => { e.remove(); });
         }
     }
     removeClass(selector, className) {
@@ -207,6 +179,6 @@
         return this.getSvgTemplate(this.descSortIcon.size, this.descSortIcon.svg.viewBox, this.descSortIcon.svg.style + ' margin-bottom: 5px; transform: rotate(180deg); ', this.descSortIcon.svg.g);
     }
     getSvgTemplate(size, viewBox, style, g) {
-        return '<svg version="1.1" class="sortIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + size.w + 'px" height="' + size.h + 'px" viewBox="' + viewBox + '" style="' + style + '"> <g> <path d="'+g.path.d+'"/> </g></svg>';
+        return '<svg version="1.1" class="sortIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + size.w + 'px" height="' + size.h + 'px" viewBox="' + viewBox + '" style="' + style + '"> <g> <path d="' + g.path.d + '"/> </g></svg>';
     }
 }

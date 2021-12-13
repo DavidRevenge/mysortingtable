@@ -105,10 +105,59 @@
             </tr>
         </tbody>
     </table>
+    <h1>Case Sensitive Sort</h1>
+    <table id="case_sensitive_table_id" class="table_class">
+        <thead>
+            <tr>
+                <th scope="col" class="toSort">Name</th>
+                <th scope="col" class="toSort">Age</th>
+                <th scope="col">Third Column</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Goofy
+                </td>
+                <td>89</td>
+                <td>
+                   Third Column Text
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mickey Mouse
+                </td>
+                <td>93</td>
+                <td>
+                   Third Column Text
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    bickey Mouse
+                </td>
+                <td>15</td>
+                <td>
+                   Third Column Text
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    boofy
+                </td>
+                <td>11</td>
+                <td>
+                   Third Column Text
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-    <script src="MySortingTable.js"></script>
+    <script src="MySortingTable-min.js"></script>
     <script>
-        var table = new MySortingTable('.table_class');
+        var table = new MySortingTable('.table_class:not(#case_sensitive_table_id)');
+        var table_sensitive = new MySortingTable('#case_sensitive_table_id', true);
     </script>
 </body>
 
