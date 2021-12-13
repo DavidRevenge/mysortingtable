@@ -5,11 +5,11 @@
  *  Add the .toSort class to the th to be sorted.
  *  Add the .defaultSort class to the th to be sorted immediately upon loading the table.
  * @author Davide Buccella
- * @version 2.4.2
+ * @version 2.4.3
  * @dependency none
  * @license MIT
  */
- class MySortingTable {
+class MySortingTable {
     selector = '';
     selectorForId = '';
     isCaseSensitive = false;
@@ -26,7 +26,7 @@
             h: 13
         },
         svg: {
-            viewBox: '0 0 36.678 36.678', 
+            viewBox: '0 0 36.678 36.678',
             style: 'enable-background:new ' + this.viewBox + '; margin-left: 1rem;',
             g: {
                 path: {
@@ -45,7 +45,7 @@
             h: 8
         },
         svg: {
-            viewBox: '0 0 31.999 32', 
+            viewBox: '0 0 31.999 32',
             style: 'enable-background:new ' + this.viewBox + '; margin-left: 0.8rem;',
             g: {
                 path: {
@@ -66,13 +66,11 @@
 
                 var that = this;
                 var elems = this.selector.querySelectorAll('th.toSort');
-                elems.forEach((elem, index) => {
-                    elem.addEventListener('click', function () { that.clickEvent(this, index); });
-                });
+                elems.forEach((elem, index) => { elem.addEventListener('click', function () { that.clickEvent(this, index); }); });
                 this.addClass(this.selector, 'initialized');
             }
             var elemsToClick = this.selector.querySelectorAll('th.toSort.defaultSort');
-            elemsToClick.forEach(etc => { etc.click();});
+            elemsToClick.forEach(etc => { etc.click(); });
         });
     }
     getRandomId() {
@@ -193,6 +191,6 @@
         return this.getSvgTemplate(this.descSortIcon.size, this.descSortIcon.svg.viewBox, this.descSortIcon.svg.style + ' margin-bottom: 5px; transform: rotate(180deg); ', this.descSortIcon.svg.g);
     }
     getSvgTemplate(size, viewBox, style, g) {
-        return '<svg version="1.1" class="sortIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + size.w + 'px" height="' + size.h + 'px" viewBox="' + viewBox + '" style="' + style + '"> <g> <path d="'+g.path.d+'"/> </g></svg>';
+        return '<svg version="1.1" class="sortIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + size.w + 'px" height="' + size.h + 'px" viewBox="' + viewBox + '" style="' + style + '"> <g> <path d="' + g.path.d + '"/> </g></svg>';
     }
 }
