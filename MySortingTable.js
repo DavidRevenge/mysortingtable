@@ -71,8 +71,6 @@
                 value: value
             });
         });
-        // if (this.hasClass(table, 'desc')) this.sortAsc(values, thClicked);
-        // else if (this.hasClass(table, 'asc')) this.sortDesc(values, thClicked);
         if (this.hasClass(thClicked, 'desc')) this.sortAsc(values, thClicked);
         else if (this.hasClass(thClicked, 'asc')) this.sortDesc(values, thClicked);
         else this.sortAsc(values, thClicked);
@@ -101,7 +99,6 @@
             return 0;
         });
         this.replaceSortIcon(th, this.getAscSortSvg());
-        // this.changeClass(th.closest('table'), 'desc', 'asc');
         this.changeClass(th, 'desc', 'asc');
 
     }
@@ -118,7 +115,6 @@
             return 0;
         });
         this.replaceSortIcon(th, this.getDescSortSvg());
-        // this.changeClass(th.closest('table'), 'asc', 'desc');
         this.changeClass(th, 'asc', 'desc');
     }
     getSortValues(a, b) {
