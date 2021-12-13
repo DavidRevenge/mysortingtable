@@ -9,7 +9,7 @@
  * @dependency none
  * @license MIT
  */
-class MySortingTable {
+ class MySortingTable {
     selector = '';
     selectorForId = '';
     isCaseSensitive = false;
@@ -32,7 +32,7 @@ class MySortingTable {
     constructor(selector) {
         document.querySelectorAll(selector).forEach(sel => {
             this.selector = sel;
-            this.removeClass(this.selector, 'asc desc');
+            this.removeClass(this.selector.querySelectorAll('th'), 'asc desc');
             this.iconInit();
             if (!this.hasClass(this.selector, 'initialized')) {
 
@@ -71,8 +71,10 @@ class MySortingTable {
                 value: value
             });
         });
-        if (this.hasClass(table, 'desc')) this.sortAsc(values, thClicked);
-        else if (this.hasClass(table, 'asc')) this.sortDesc(values, thClicked);
+        // if (this.hasClass(table, 'desc')) this.sortAsc(values, thClicked);
+        // else if (this.hasClass(table, 'asc')) this.sortDesc(values, thClicked);
+        if (this.hasClass(thClicked, 'desc')) this.sortAsc(values, thClicked);
+        else if (this.hasClass(thClicked, 'asc')) this.sortDesc(values, thClicked);
         else this.sortAsc(values, thClicked);
 
         values.forEach(v => {
@@ -99,7 +101,8 @@ class MySortingTable {
             return 0;
         });
         this.replaceSortIcon(th, this.getAscSortSvg());
-        this.changeClass(th.closest('table'), 'desc', 'asc');
+        // this.changeClass(th.closest('table'), 'desc', 'asc');
+        this.changeClass(th, 'desc', 'asc');
 
     }
     changeClass(selector, fromClass, toClass) {
@@ -115,7 +118,8 @@ class MySortingTable {
             return 0;
         });
         this.replaceSortIcon(th, this.getDescSortSvg());
-        this.changeClass(th.closest('table'), 'asc', 'desc');
+        // this.changeClass(th.closest('table'), 'asc', 'desc');
+        this.changeClass(th, 'asc', 'desc');
     }
     getSortValues(a, b) {
         return {
