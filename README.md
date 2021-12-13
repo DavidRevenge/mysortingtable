@@ -34,7 +34,7 @@ https://davidrevenge.github.io/mysortingtable/
 ### Second example
 ```html
 <script>
-    var table = new MySortingTable('.table_class'); //'.table_class' is the css table selector
+    var table = new MySortingTable('.table_class'); //'.table_class' is the css table selector (multiple tables supported)
 </script>
 ```
 
