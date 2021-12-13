@@ -5,7 +5,7 @@
  *  Add the .toSort class to the th to be sorted.
  *  Add the .defaultSort class to the th to be sorted immediately upon loading the table.
  * @author Davide Buccella
- * @version 2.4.4
+ * @version 2.4.5
  * @dependency none
  * @license MIT
  */
@@ -13,12 +13,6 @@ class MySortingTable {
     selector = '';
     selectorForId = '';
     isCaseSensitive = false;
-
-    g = {
-        path: {
-            d: ''
-        }
-    }
 
     defaultSortIcon = {
         size: {
