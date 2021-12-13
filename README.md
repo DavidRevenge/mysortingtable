@@ -2,7 +2,7 @@
 Simple class to perform the table sort: was created specifically to compensate for the fact that - sometimes - sorting datatables cannot be applied.<br>
 The other usefulness is that it's a single file. It does not depend on any other file (css, javascript, etc.)
 # Demo
-<a href="https://davidrevenge.github.io/mysortingtable/" target="_blank">https://davidrevenge.github.io/mysortingtable/</a>
+https://davidrevenge.github.io/mysortingtable/
 
 # To initialize the table
 ## 1. Download
