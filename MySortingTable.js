@@ -130,7 +130,8 @@ class MySortingTable {
         }
     }
     getSortValue(elem) {
-        return (this.isCaseSensitive) ? elem.value : elem.value.toLowerCase();
+        if ( ! isNaN(elem.value)) return parseInt(elem.value);
+        else return (this.isCaseSensitive) ? elem.value : elem.value.toLowerCase();
     }
     appendHtml(elem, htmlToAppend) {
         if (!!elem) {
