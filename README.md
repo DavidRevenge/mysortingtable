@@ -1,5 +1,5 @@
 # My Sorting Table
-A light simple class to perform the table sort: was created specifically to compensate for the fact that - sometimes - sorting datatables cannot be applied.<br><br>
+Light simple class to perform the table sort: was created specifically to compensate for the fact that - sometimes - sorting datatables cannot be applied.<br><br>
 The other usefulness is that it's a single file. It does not depend on any other file (css, javascript, etc.)
 # Demo
 https://davidrevenge.github.io/mysortingtable/
